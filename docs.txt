@@ -1,0 +1,5 @@
+IMPORTANT INFORMATION FOR PROJECTs
+
+Info for socrata
+username: nadamap
+pass:nadamaps1!
