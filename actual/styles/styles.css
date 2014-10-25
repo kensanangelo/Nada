@@ -1,0 +1,11 @@
+
+html {height:100%}
+body {height:100%;margin:0;padding:0}
+#header {
+	height: 5%;
+}
+#googleMap {
+	height:95%;
+	width: 80%;
+	margin: 0 auto;
+}

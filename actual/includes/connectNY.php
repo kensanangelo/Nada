@@ -9,6 +9,7 @@
 //  $params = array("\$where" => "within_circle(location, $latitude, $longitude, $range)");
 
 
-  $response = $socrata->get("/resource/f4vj-p8y5.json");
+  $rivers = $socrata->get("/resource/jcxg-7gnm.json");
+  $lakes = $socrata->get("/resource/mw8j-wduf.json");
 
 ?>
