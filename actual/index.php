@@ -11,7 +11,10 @@
 </head>
 
 <body>
-	<div id="header"></div>
+	<div id="header">
+		<a href=”#”><h2>NADA maps</h2></a>
+	</div>
+	
 	<div id="googleMap"></div>
 
 </body>
