@@ -13,7 +13,7 @@ body {
 h2 {
 	position: absolute;
 	margin-top: 9px;
-	padding-left: 15px;
+	padding-left: 45px;
 }
 
 a {
@@ -25,9 +25,30 @@ a:hover {
 	color: #ffffff;
 }
 
-.about {
+#about {
 	bottom: -12px;
 }
+
+#aboutWindow{
+	box-shadow: 5px 5px 20px #888888;
+	left: 7%;
+	width: 25%;
+	min-width: 150px;
+	height: 80%;
+	bottom: 0px;
+	background-color: #7accf0;
+	position: absolute;
+	z-index: 98;
+	-webkit-transition: bottom 1s; /* For Safari 3.1 to 6.0 */
+    transition: bottom 1s;
+}
+
+#aboutWindow:active, #aboutWindow.actived {
+	bottom: -80%;
+	-webkit-transition: bottom 1s; /* For Safari 3.1 to 6.0 */
+    transition: bottom 1s;
+}
+
 
 #footer {
 	width: 100%;
@@ -40,8 +61,7 @@ a:hover {
 
 #header {
 	float: left;
-	height: 6%;
-	min-height: 45px;
+	height: 45px;
 	width: 100%;
 	background-color: #dccfc7;
 }
