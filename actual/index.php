@@ -12,10 +12,16 @@
 
 <body>
 	<div id="header">
-		<a href=”#”><h2>NADA maps</h2></a>
+		<a href=#><h2>NADA maps</h2></a>
 	</div>
-	
+
 	<div id="googleMap"></div>
+
+	<div id="footer">
+		<a href=#><h2 class="about" >About</h2></a>
+		<img src="img/waves.svg" alt="Waves">
+		
+	</div>
 
 </body>
 </html>
