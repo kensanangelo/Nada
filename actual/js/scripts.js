@@ -4,4 +4,8 @@ $(document).ready(function(){
 	   $("#aboutWindow").toggleClass("actived");
 	});
 
+	$("#search").submit(function() {
+	   $("#searchWindow").toggleClass("actived");
+	});
+
 });

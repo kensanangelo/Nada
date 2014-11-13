@@ -15,13 +15,26 @@
 <body>
 	<div id="header">
 		<a href=#><h2>NADA maps</h2></a>
+		<form id="search" action=#>
+  			<input type="search" name="fishsearch">
+  			<input type="submit" value="Search">
+		</form>
 	</div>
 
 	<div id="googleMap"></div>
 
 	<div id="aboutWindow">
-		<h2>About<h2>
-		<p>Check me out</p>
+		<div class="windowContent">
+			<h3>About</h3>
+			<p>Check me out</p>
+		</div>
+	</div>
+
+	<div id="searchWindow">
+		<div class="windowContent">
+			<h3>Search</h3>
+			<p>Check out my fishes</p>
+		</div>
 	</div>
 
 	<div id="footer">
