@@ -26,8 +26,13 @@
 
 	<div id="aboutWindow">
 		<div class="windowContent">
+<<<<<<< HEAD
 			<h3>Welcome to Nada Maps!</h3>
 			<p>Are you a fish? Do you find it hard to avoid being caught by fisherman when going to your favorite lakes and rivers? Don't you wish there was a way to know where fisherman went to avoid them all together? Well, now there is!<br/>Welcome to Nada Maps! We show you the most popular fishing spots in all of New York, and where the fisherman are going for certain fish. Click on a point to learn more about it, or use the search up above.</p>
+=======
+			<h3>About</h3>
+			<p>Check me out</p>
+>>>>>>> origin/Interface
 		</div>
 	</div>
 
