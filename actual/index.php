@@ -16,6 +16,8 @@
 	<script	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyArNFTlstSX6IZDDmgTJI5YZ7mAnST6glc&sensor=false"></script>
 	<?php include "includes/map.php" ?>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/data.json"></script>
+	<script type="text/javascript" src="js/markerclusterer.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
 
 </head>
@@ -44,7 +46,7 @@
 	<div id="searchWindow">
 		<div class="windowContent">
 			<div class="row">
-				<h3 class='col-md-6' id='resultsHeader'>Search Results</h3>
+				<h3 class='col-md-8' id='resultsHeader'>Search Results</h3>
 				<button type="button" class="close pull-right" id='searchClose'><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 			</div>
 			<div id='resultsWindow'>
