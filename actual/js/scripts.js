@@ -32,8 +32,6 @@ function searchItems(){
 	if(resultsRivers.length>0 || resultsLakes.length>0){
 		resultsHTML="<ul>";
 
-		console.log(resultsRivers.length);
-
 		for (i = 0; i < resultsRivers.length; i++) {
 			tempIndex=resultsRivers[i];
 			resultsHTML+="<li>"+rivers[tempIndex].name+"</li>";
@@ -130,12 +128,28 @@ function initialize()
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
+var aboutOpen=true;
+var searchOpen=false;
+
 $(document).ready(function(){
 
 	//Opens about window on click of title
 	$("#about").click(function() {
 		$("#aboutWindow").toggleClass("actived");
+
+		if(abouthOpen==false)
+			aboutOpen=true;
+		else
+			aboutOpen=false;
 	});
+
+	$("#aboutClose").click(function() {
+		if(aboutOpen==true){
+			$("#aboutWindow").toggleClass("actived");
+			aboutOpen=false;
+		}
+	});	
+
 
 	//Runs search on click
 	$("#search").submit(function(event) {
@@ -143,10 +157,20 @@ $(document).ready(function(){
 
 		searchItems();
 
-		$("#searchWindow").toggleClass("actived");
+		if(searchOpen==false){
+			$("#searchWindow").toggleClass("actived");
+			searchOpen=true;
+		}
 
 		return false;
 
 	});
+
+	$("#searchClose").click(function() {
+		if(searchOpen==true){
+			$("#searchWindow").toggleClass("actived");
+			searchOpen=false;
+		}
+	});	
 
 });

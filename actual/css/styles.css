@@ -17,6 +17,15 @@ h2 {
 	padding-left: 45px;
 }
 
+h3 {
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+#searchClose, #aboutClose{
+	margin-right: 15px;
+}
+
 form {
 	float: right;
 	padding-right: 45px;
