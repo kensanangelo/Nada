@@ -33,8 +33,10 @@
 
 	<div id="searchWindow">
 		<div class="windowContent">
-			<h3>Search</h3>
-			<p>Check out my fishes</p>
+			<h3 id='resultsHeader'>Search Results</h3>
+			<div id='resultsWindow'>
+				<p>No results found.</p>
+			</div>
 		</div>
 	</div>
 
