@@ -119,36 +119,54 @@ function searchItems(){
 }
 
 function markerListener(type, thisMarker){
-	console.log("Listener Clicked");
+
+	if(searchOpen==false){
+		$("#searchWindow").toggleClass("actived");
+		searchOpen=true;
+	}
+
+	var listIndex=thisMarker.indexNum;
+
 	var headerHTML="";
 	var resultsHTML="";
 
 	if (type=='river') {
-		var rivIndex=thisMarker.indexNum;
-		var name=rivers[rivIndex].name;
-		var species=rivers[rivIndex].fish_spec;
-		var comments=rivers[rivIndex].comments;
-		var regs=rivers[rivIndex].spec_regs;
-		var county=rivers[rivIndex].county;
-		var access=rivers[rivIndex].public_acc;
-		var info=rivers[rivIndex].site_wl;
+		var name=rivers[listIndex].name;
+		var species=rivers[listIndex].fish_spec;
+		var comments=rivers[listIndex].comments;
+		var regs=rivers[listIndex].spec_regs;
+		var county=rivers[listIndex].county;
+		var access=rivers[listIndex].public_acc;
+		var info=rivers[listIndex].site_wl;
 
 	}else if (type=='lake') {
-		var index=thisMarker.indexNum;
-		var name=rivers[index].water;
-		var species=rivers[index].fish_speci;
-		var comments=rivers[index].comments;
-		var regs=rivers[index].spec_regs;
-		var county=rivers[index].county;
-		var access=rivers[index].boat_launc;
-		var info=rivers[index].weblink;
+		var name=lakes[listIndex].water;
+		var species=lakes[listIndex].fish_speci;
+		var comments=lakes[listIndex].comments;
+		var regs=lakes[listIndex].spec_regs;
+		var county=lakes[listIndex].county;
+		var access=lakes[listIndex].boat_launc;
+		var info=lakes[listIndex].weblink;
 	};
+
+	if(regs==null)
+		regs="None";
+
+	if(access==null)
+		access="None";
+
+	if(comments==null)
+		comments="None";
 
 	headerHTML+=name;
 	resultsHTML+="<ul>";
 
 	//resultsHTML+="<li><a href='"+info+"'>Waterbody Information</a></li>";
-	resultsHTML+="<li><h4>Fish Species: </h4><p>"+species+"</p></li>";	
+	resultsHTML+="<li><h4>Fish Species: </h4><p>"+species+"</p></li>";
+	resultsHTML+="<li><h4>County: </h4><p>"+county+"</p></li>";	
+	resultsHTML+="<li><h4>Public Access: </h4><p>"+access+"</p></li>";
+	resultsHTML+="<li><h4>Regulations: </h4><p>"+regs+"</p></li>";
+	resultsHTML+="<li><h4>Comments: </h4><p>"+comments+"</p></li>";
 	resultsHTML+="</ul>";
 
 	console.log(headerHTML);
