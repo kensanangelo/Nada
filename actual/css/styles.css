@@ -228,20 +228,46 @@ hr {
 	border-radius: 0px 4px 4px 0px;
 }
 
-#animation {
-	position: absolute;
-	bottom: 5px;
-	left: 75%;
-	max-width: 40px;
-	z-index: 99;
+@-webkit-keyframes movingfish{
+	0%{left:70%;}
+	50%{left:64%;}
+	100%{left:70%;}
+}
+@keyframes movingfish{
+	0%{left:70%;}
+	50%{left:64%;}
+	100%{left:70%;}
 }
 
-#animation2 {
+@-webkit-keyframes movingfish2{
+	0%{left:30%;}
+	50%{left:36%;}
+	100%{left:30%;}
+}
+@keyframes movingfish2{
+	0%{left:30%;}
+	50%{left:36%;}
+	100%{left:30%;}
+}
+
+.animation {
 	position: absolute;
-	bottom: 5px;
-	left: 25%;
+	bottom: 2px;
+	left: 70%;
 	max-width: 40px;
 	z-index: 99;
+	-webkit-animation:movingfish 25s infinite;
+	animation:movingfish 25s infinite;
+}
+
+.animation2 {
+	position: absolute;
+	bottom: 2px;
+	left: 20%;
+	max-width: 40px;
+	z-index: 99;
+	-webkit-animation:movingfish2 30s infinite;
+	animation:movingfish2 30s infinite;
 }
 
 @media screen and (max-width : 1100px){

@@ -81,8 +81,8 @@
 		</div>
 	</div>
 
-	<img id="animation2" src="img/animation2.svg" alt="Fish with bubbles">
-	<img id="animation" src="img/animation.svg" alt="Fish with bubbles">
+	<img class="animation2 movingfish2" src="img/animation2.svg" alt="Fish with bubbles">
+	<img class="animation movingfish" src="img/animation.svg" alt="Fish with bubbles">
 	<div id="footer">
 		<img src="img/waves.svg" alt="Waves">
 	</div>
