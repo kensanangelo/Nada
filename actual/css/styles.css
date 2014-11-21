@@ -106,9 +106,15 @@ div#pics img.img-responsive {
 
 }
 
+hr {
+	clear: both;
+	visibility: hidden;
+	width: 90%;
+	padding: 2px;
+}
+
 .windowContent {
 	height: 65vh;
-	overflow-y: scroll;
 	overflow-x: hidden;
 }
 
