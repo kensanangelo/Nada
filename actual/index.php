@@ -30,7 +30,7 @@
 		<p>Please use a computer with a larger monitor to access this site.</p>
 	</div>
 	<div id="header">
-		<a href=#><h2 id="about">Nada Maps</h2><img class="logo" src="img/fishhook.svg" alt="Fish with hook"></a>
+		<a id="about" href=#><h2>Nada Maps</h2><img class="logo" src="img/fishhook.svg" alt="Fish with hook"></a>
 		<div id="search">
   			<input type="search" id='searchBox' name="fishsearch" placeholder='Search Here'>
   			<input type="button" value="Search"  id='searchButton'/>
@@ -46,7 +46,19 @@
 				<button type="button" class="close pull-right" id='aboutClose'><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 			</div>
 			<div class="windowContent">
-				<p class="col-md-12">Are you a fish? Do you find it hard to avoid being caught by fisherman when going to your favorite lakes and rivers? Don't you wish there was a way to know where fisherman went to avoid them all together? Well, now there is!<br/>Welcome to Nada Maps! We show you the most popular fishing spots in all of New York, and where the fisherman are going for certain fish. Click on a point to learn more about it, or use the search up above.</p>
+				<p class="col-md-12">
+					Before you grab your gear and walk out the door, let's figure out where you're fishing today!
+				</p>
+				<p class="col-md-12">Once you zoom in on the map, you'll see two kinds of locations.</p>
+				<img class="col-md-3" src="img/lakeMark.png" alt="River Map Marker">
+				<div class="col-md-9">
+					<p>This little guy means the spot is a lake.<p>
+				</div>
+				<img class="col-md-3" src="img/riverMark.png" alt="River Map Marker">
+				<div class="col-md-9">
+					<p>And this one is a river.<p>
+				</div>
+				<p class="col-md-12">Click on a point to see information about it! Or you can search for a specific location, type of fish, or county in the top right.</p>
 			</div>
 		</div>
 	</div>
