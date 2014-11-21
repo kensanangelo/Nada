@@ -25,10 +25,10 @@
 <body>
 	<div id="header">
 		<a href=#><h2 id="about">NADA maps</h2></a>
-		<form id="search" action=#>
+		<div id="search">
   			<input type="search" id='searchBox' name="fishsearch" placeholder='Search Here'>
-  			<input type="submit" value="Search">
-		</form>
+  			<input type="button" value="Search"  id='searchButton'/>
+		</div>
 	</div>
 
 	<div id="googleMap"></div>
@@ -36,7 +36,7 @@
 	<div id="aboutWindow">
 		<div class="windowContent">
 			<div class="row">
-				<h3 class='col-md-6' id='resultsHeader'>Welcome to Nada Maps!</h3>
+				<h3 class='col-md-6' id='aboutHeader'>Welcome to Nada Maps!</h3>
 				<button type="button" class="close pull-right" id='aboutClose'><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 			</div>
 			<p>Are you a fish? Do you find it hard to avoid being caught by fisherman when going to your favorite lakes and rivers? Don't you wish there was a way to know where fisherman went to avoid them all together? Well, now there is!<br/>Welcome to Nada Maps! We show you the most popular fishing spots in all of New York, and where the fisherman are going for certain fish. Click on a point to learn more about it, or use the search up above.</p>

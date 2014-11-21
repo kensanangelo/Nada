@@ -49,6 +49,8 @@ function addMarkers(rivIndexs, lakeIndexs){
 
 function searchItems(){
 
+	console.log("Search Runs");
+
 	var i, tempIndex;
 	var search=$('#searchBox').val().toLowerCase();
 	var name, fish, county;
@@ -104,6 +106,45 @@ function searchItems(){
 
 }
 
+function markerListener(type, thisMarker){
+	console.log("Listener Clicked");
+	var headerHTML="";
+	var resultsHTML="";
+
+	if (type=='river') {
+		var rivIndex=thisMarker.indexNum;
+		var name=rivers[rivIndex].name;
+		var species=rivers[rivIndex].fish_spec;
+		var comments=rivers[rivIndex].comments;
+		var regs=rivers[rivIndex].spec_regs;
+		var county=rivers[rivIndex].county;
+		var access=rivers[rivIndex].public_acc;
+		var info=rivers[rivIndex].site_wl;
+
+	}else if (type=='lake') {
+		var index=thisMarker.indexNum;
+		var name=rivers[index].water;
+		var species=rivers[index].fish_speci;
+		var comments=rivers[index].comments;
+		var regs=rivers[index].spec_regs;
+		var county=rivers[index].county;
+		var access=rivers[index].boat_launc;
+		var info=rivers[index].weblink;
+	};
+
+	headerHTML+=name;
+	resultsHTML+="<ul>";
+
+	//resultsHTML+="<li><a href='"+info+"'>Waterbody Information</a></li>";
+	resultsHTML+="<li><h4>Fish Species: </h4><p>"+species+"</p></li>";	
+	resultsHTML+="</ul>";
+
+	console.log(headerHTML);
+	console.log(resultsHTML);
+	$("#resultsHeader").text(headerHTML);
+	document.getElementById("resultsWindow").innerHTML=resultsHTML;
+}
+
 
 //Loads google maps
 function initialize()
@@ -144,7 +185,12 @@ function initialize()
 		var marker = new google.maps.Marker({
 			position: new google.maps.LatLng(rivers[i].point_y, rivers[i].point_x),
 			map: map,
-			icon:pinIconR
+			icon:pinIconR,
+			indexNum: i
+		});
+
+		google.maps.event.addListener(marker, 'click', function() {
+			markerListener('river', this);
 		});
 		
 		markers.push(marker);
@@ -155,7 +201,12 @@ function initialize()
 		var marker = new google.maps.Marker({
 			position: new google.maps.LatLng(lakes[i].point_y, lakes[i].point_x),
 			map: map,
-			icon:pinIconL
+			icon:pinIconL,
+			indexNum: i
+		});
+
+		google.maps.event.addListener(marker, 'click', function() {
+			markerListener('lake', this);
 		});
 		
 		markers.push(marker);
@@ -176,7 +227,7 @@ $(document).ready(function(){
 	$("#about").click(function() {
 		$("#aboutWindow").toggleClass("actived");
 
-		if(abouthOpen==false)
+		if(aboutOpen==false)
 			aboutOpen=true;
 		else
 			aboutOpen=false;
@@ -191,8 +242,7 @@ $(document).ready(function(){
 
 
 	//Runs search on click
-	$("#search").submit(function(event) {
-		event.preventDefault();
+	$("#searchButton").click(function() {
 
 		searchItems();
 
@@ -200,8 +250,6 @@ $(document).ready(function(){
 			$("#searchWindow").toggleClass("actived");
 			searchOpen=true;
 		}
-
-		return false;
 
 	});
 
