@@ -26,19 +26,11 @@
 
 <body>
 	<div id="header">
-<<<<<<< HEAD
-		<a href=#><h2 id="about">Nada Maps</h2></a>
-		<form id="search" action=#>
-  			<input type="search" id='searchBox' name="fishsearch" placeholder='Search Here'>
-  			<input type="submit" id='searchButton' value="Search">
-		</form>
-=======
 		<a href=#><h2 id="about">NADA maps</h2></a>
 		<div id="search">
   			<input type="search" id='searchBox' name="fishsearch" placeholder='Search Here'>
   			<input type="button" value="Search"  id='searchButton'/>
 		</div>
->>>>>>> Search
 	</div>
 
 	<div id="googleMap"></div>
