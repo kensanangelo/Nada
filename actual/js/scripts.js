@@ -283,6 +283,17 @@ $(document).ready(function(){
 
 	});
 
+	$("#searchBox").keypress(function(e) {
+   		if (e.keyCode == 13) {
+			searchItems();
+
+			if(searchOpen==false){
+				$("#searchWindow").toggleClass("actived");
+				searchOpen=true;
+			}
+		}
+    });
+
 	$("#searchClose").click(function() {
 		if(searchOpen==true){
 			$("#searchWindow").toggleClass("actived");
