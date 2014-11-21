@@ -3,19 +3,19 @@ function addMarkers(rivIndexs, lakeIndexs){
 	var resultMarks = [];
 
 	var pinIconR = new google.maps.MarkerImage(
-		"img/r.png",
+		"img/riverMark.png",
 		null, /* size is determined at runtime */
 		null, /* origin is 0,0 */
 		null, /* anchor is bottom center of the scaled image */
-		new google.maps.Size(40, 40)
+		new google.maps.Size(55, 27)
 	); 
 
 	var pinIconL = new google.maps.MarkerImage(
-		"img/l.png",
+		"img/lakeMark.png",
 		null, /* size is determined at runtime */
 		null, /* origin is 0,0 */
 		null, /* anchor is bottom center of the scaled image */
-		new google.maps.Size(40, 40)
+		new google.maps.Size(55, 27)
 	); 
 
 	google.maps.event.clearListeners(map, 'click');
@@ -203,19 +203,19 @@ function initialize()
 	var i;
 
 	var pinIconR = new google.maps.MarkerImage(
-		"img/r.png",
+		"img/riverMark.png",
 		null, /* size is determined at runtime */
 		null, /* origin is 0,0 */
 		null, /* anchor is bottom center of the scaled image */
-		new google.maps.Size(40, 40)
+		new google.maps.Size(55, 27)
 	); 
 
 	var pinIconL = new google.maps.MarkerImage(
-		"img/l.png",
+		"img/lakeMark.png",
 		null, /* size is determined at runtime */
 		null, /* origin is 0,0 */
 		null, /* anchor is bottom center of the scaled image */
-		new google.maps.Size(40, 40)
+		new google.maps.Size(55, 27)
 	); 
 
 	for(i=0;i<rivers.length;i++){
