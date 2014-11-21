@@ -26,7 +26,7 @@
 
 <body>
 	<div id="header">
-		<a href=#><h2 id="about">NADA maps</h2></a>
+		<a href=#><h2 id="about">Nada Maps</h2></a>
 		<div id="search">
   			<input type="search" id='searchBox' name="fishsearch" placeholder='Search Here'>
   			<input type="button" value="Search"  id='searchButton'/>
