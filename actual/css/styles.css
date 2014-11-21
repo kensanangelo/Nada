@@ -7,6 +7,7 @@ body {
 	height:	100%;
 	margin:	0;
 	padding:  0;
+	color: #292929;
 	font-family: 'Karla', sans-serif;
 	letter-spacing: .015em;
 	overflow: hidden;
@@ -14,11 +15,11 @@ body {
 
 h2 {
 	color: #e85113;
-	position: absolute;
-	margin-top: 9px;
+	float: left;
+	margin-top: 4px;
 	padding-left: 45px;
 	font-family: 'Bubblegum Sans', cursive;
-	font-size: 2.35em;
+	font-size: 2.8em;
 	letter-spacing: .02em;
 }
 
@@ -60,6 +61,13 @@ li p {
 	line-height: 1.6em;
 }
 
+.logo {
+	max-width: 72px;
+	float: left;
+	margin-top: -3px;
+	margin-left: 20px;
+}
+
 #searchClose, #aboutClose{
 	margin-right: 15px;
 }
@@ -72,6 +80,7 @@ li p {
 
 a {
 	text-decoration: none;
+
 }
 
 a:hover {
@@ -175,6 +184,8 @@ a:hover {
 }
 
 #searchBox {
+	background-color: #f9f9f9;
+	color: #e85113;
 	border: none;
 	padding: 5px;
 	margin-top: 0;
