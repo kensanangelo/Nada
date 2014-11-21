@@ -16,7 +16,7 @@ body {
 h2 {
 	color: #e85113;
 	float: left;
-	margin-top: 4px;
+	margin-top: 6px;
 	padding-left: 45px;
 	font-family: 'Bubblegum Sans', cursive;
 	font-size: 2.8em;
@@ -80,7 +80,6 @@ li p {
 
 a {
 	text-decoration: none;
-
 }
 
 a:hover {
@@ -113,7 +112,7 @@ a:hover {
 }
 
 #aboutWindow.actived {
-	bottom: -80%;
+	bottom: -90%;
 	-webkit-transition: bottom 0.5s; /* For Safari 3.1 to 6.0 */
     transition: bottom 0.5s;
 }
@@ -126,7 +125,7 @@ a:hover {
 	width: 26%;
 	min-width: 170px;
 	height: 87%;
-	bottom: -80%;
+	bottom: -90%;
 	padding: 12px;
 	border-radius: 4px;
 	background-color: #A9D9FF;
