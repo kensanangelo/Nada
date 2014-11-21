@@ -25,7 +25,7 @@
 </head>
 
 <body>
-	<div id="mobile" class="hidden">
+	<div id="mobile">
 		<h1>This site is unavailable on mobile</h1>
 		<p>Please use a computer with a larger monitor to access this site.</p>
 	</div>

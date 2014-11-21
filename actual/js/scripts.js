@@ -130,7 +130,7 @@ function searchItems(){
 
 }
 
-function showInfo(type, listIndex, zoom){
+function showInfo(type, listIndex, search){
 
 	if(searchOpen==false){
 		$("#searchWindow").toggleClass("actived");
@@ -164,7 +164,7 @@ function showInfo(type, listIndex, zoom){
 		var long=lakes[listIndex].point_x;
 		var lat=lakes[listIndex].point_y;
 	};
-	if(zoom)
+	if(search)
 		map.setZoom(14);
 	
 	map.panTo(new google.maps.LatLng(lat, long));
@@ -180,6 +180,8 @@ function showInfo(type, listIndex, zoom){
 
 	headerHTML+=name;
 	resultsHTML+="<ul>";
+	if(search)
+		resultsHTML+="<a href='#' id='back'>Back to results.</a>";
 
 	//resultsHTML+="<li><a href='"+info+"'>Waterbody Information</a></li>";
 	resultsHTML+="<li><h4>Fish Species:</h4><p>"+species+"</p></li>";
@@ -194,10 +196,30 @@ function showInfo(type, listIndex, zoom){
 	$("#resultsWindow").html(resultsHTML);
 
 	getFlickrImg(name);
+
+	if(search){
+		$("#back").click(function() {
+			searchItems()
+		});	
+	}
 }
 
 function getFlickrImg(tagName){
-$(function(){	
+$(function(){
+		
+			tagName=tagName.replace('Upper/Lower ','');
+			tagName=tagName.replace(' (Lower)','');
+			tagName=tagName.replace(' (Upper)','');
+			tagName=tagName.replace('Upper','');
+			tagName=tagName.replace('Lower','');
+			tagName=tagName.replace(' (Arcade)','');
+			tagName=tagName.replace(' (Ellington)','');
+			tagName=tagName.replace(' (Barge Canal)','');
+			tagName=tagName.replace(' (N & S)','');
+		
+
+		console.log(tagName);
+
 	    $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
 	    {
 	      tags: tagName,
