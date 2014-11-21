@@ -45,51 +45,45 @@ a:hover {
 	padding: 10px;
 }
 
-/*
-#about {
-	bottom: -12px;
-}
-*/
-
 #aboutWindow{
-	-moz-box-shadow: 5px 5px 20px #767676;
-	-webkit-box-shadow: 5px 5px 20px #767676;
-	box-shadow: 5px 5px 20px #767676;
+	-moz-box-shadow: 5px 5px 20px #999999;
+	-webkit-box-shadow: 5px 5px 20px #999999;
+	box-shadow: 5px 5px 20px #999999;
 	left: 5%;
 	width: 25%;
 	min-width: 170px;
 	height: 87%;
 	bottom: 0px;
-	background-color: #7accf0;
+	background-color: #A9D9FF;
 	position: absolute;
 	z-index: 98;
 	-webkit-transition: bottom 1s; /* For Safari 3.1 to 6.0 */
     transition: bottom 1s;
 }
 
-#aboutWindow:active, #aboutWindow.actived {
+#aboutWindow.actived {
 	bottom: -80%;
 	-webkit-transition: bottom 0.5s; /* For Safari 3.1 to 6.0 */
     transition: bottom 0.5s;
 }
 
 #searchWindow{
-	-moz-box-shadow: 5px 5px 20px #767676;
-	-webkit-box-shadow: 5px 5px 20px #767676;
-	box-shadow: 5px 5px 20px #767676;
+	-moz-box-shadow: 5px 5px 20px #999999;
+	-webkit-box-shadow: 5px 5px 20px #999999;
+	box-shadow: 5px 5px 20px #999999;
 	right: 5%;
 	width: 25%;
 	min-width: 170px;
 	height: 87%;
 	bottom: -80%;
-	background-color: #7accf0;
+	background-color: #A9D9FF;
 	position: absolute;
 	z-index: 98;
 	-webkit-transition: bottom 0.5s; /* For Safari 3.1 to 6.0 */
     transition: bottom 0.5s;
 }
 
-#searchWindow:active, #searchWindow.actived {
+#searchWindow.actived {
 	bottom: 0px;
 	-webkit-transition: bottom 1s; /* For Safari 3.1 to 6.0 */
     transition: bottom 1s;
@@ -117,10 +111,16 @@ a:hover {
 }
 
 #header {
-	float: left;
-	height: 45px;
+	-moz-box-shadow: 5px 5px 20px #999999;
+	-webkit-box-shadow: 5px 5px 20px #999999;
+	box-shadow: 5px 5px 20px #999999;
+	float: none;
+	position: fixed;
+	top: 0px;
+	height: 50px;
 	width: 100%;
-	background-color: #dccfc7;
+	background-color: #A9D9FF;
+	z-index: 99;
 }
 
 #googleMap {
