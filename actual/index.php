@@ -31,6 +31,7 @@
 	</div>
 	<div id="header">
 		<a id="about" href=#><h2>Nada Maps</h2><img class="logo" src="img/fishhook.svg" alt="Fish with hook"></a>
+		<p class="credits">Created by Ken San Angelo & Sam Griffith</p>
 		<div id="search">
   			<input type="search" id='searchBox' name="fishsearch" placeholder='Search Here'>
   			<input type="button" value="Search"  id='searchButton'/>

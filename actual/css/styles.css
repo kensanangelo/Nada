@@ -73,6 +73,15 @@ li p {
 	margin-left: 20px;
 }
 
+.credits{
+	font-size: .9em;
+	margin-left: 20px;
+	margin-bottom: 5px;
+	display: inline;
+	position:absolute;
+ 	bottom:0;
+}
+
 #searchClose, #aboutClose{
 	margin-right: 15px;
 }
