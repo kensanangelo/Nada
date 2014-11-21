@@ -62,7 +62,7 @@
 					<p>And this one is a river.<p>
 				</div>
 				<hr/>
-				<p class="col-md-12">Click on a point to see information about it! Or you can search for a specific location, type of fish, or county in the top right.</p>
+				<p class="col-md-12">Select a point to see information about it! Or you can search for a specific location, type of fish, or county in the top right.</p>
 				<hr/>
 				<p class="col-md-12">If you ever need these instructions again just select "Nada Maps" or the image in the top left corner.</p>
 			</div>
