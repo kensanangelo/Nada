@@ -119,13 +119,13 @@ function searchItems(){
 	$("li.river > a").click(function(){
 		var which = $(this).attr('id');
 		console.log(which);
-		showInfo('river', which);
+		showInfo('river', which, true);
 	});
 
 	$("li.lake > a").click(function(){
 		var which = $(this).attr('id');
 		console.log(which);
-		showInfo('lake', which);
+		showInfo('lake', which, true);
 	});
 
 }
@@ -144,10 +144,10 @@ function showInfo(type, listIndex, zoom){
 		var name=rivers[listIndex].name;
 		var species=rivers[listIndex].fish_spec;
 		var comments=rivers[listIndex].comments;
-		var regs=rivers[listIndex].spec_regs;
+		//var regs=rivers[listIndex].spec_regs;
 		var county=rivers[listIndex].county;
 		var access=rivers[listIndex].public_acc;
-		var info=rivers[listIndex].site_wl;
+		//var info=rivers[listIndex].site_wl;
 
 		var long=rivers[listIndex].point_x;
 		var lat=rivers[listIndex].point_y;
@@ -156,20 +156,21 @@ function showInfo(type, listIndex, zoom){
 		var name=lakes[listIndex].water;
 		var species=lakes[listIndex].fish_speci;
 		var comments=lakes[listIndex].comments;
-		var regs=lakes[listIndex].spec_regs;
+		//var regs=lakes[listIndex].spec_regs;
 		var county=lakes[listIndex].county;
 		var access=lakes[listIndex].boat_launc;
-		var info=lakes[listIndex].weblink;
+		//var info=lakes[listIndex].weblink;
 
 		var long=lakes[listIndex].point_x;
 		var lat=lakes[listIndex].point_y;
 	};
-
-	map.setZoom(14);
+	if(zoom)
+		map.setZoom(14);
+	
 	map.panTo(new google.maps.LatLng(lat, long));
 
-	if(regs==null)
-		regs="None";
+	//if(regs==null)
+	//	regs="None";
 
 	if(access==null)
 		access="None";
@@ -186,12 +187,30 @@ function showInfo(type, listIndex, zoom){
 	resultsHTML+="<li><h4>Latitude:</h4><p>"+lat+"</p></li>";
 	resultsHTML+="<li><h4>Longitude:</h4><p>"+long+"</p></li>";	
 	resultsHTML+="<li><h4>Public Access:</h4><p>"+access+"</p></li>";
-	resultsHTML+="<li><h4>Regulations:</h4><p>"+regs+"</p></li>";
 	resultsHTML+="<li><h4>Comments:</h4><p>"+comments+"</p></li>";
-	resultsHTML+="</ul>";
+	resultsHTML+="</ul><h4>Pictures: </h4>";
 
 	$("#resultsHeader").text(headerHTML);
 	$("#resultsWindow").html(resultsHTML);
+
+	getFlickrImg(name);
+}
+
+function getFlickrImg(tagName){
+$(function(){	
+	    $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+	    {
+	      tags: tagName,
+	      tagmode: "any",
+	      format: "json"
+	    },
+	    function(data) {
+	      $.each(data.items, function(i,item){
+	        $("<img/>").attr("src", item.media.m).attr("class", "img-responsive").appendTo("#resultsWindow");
+	        if ( i == 10 ) return false;
+	      });
+	    });
+	});
 }
 
 
