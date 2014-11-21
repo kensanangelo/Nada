@@ -80,7 +80,7 @@ a:hover {
 	height: 87%;
 	bottom: 0px;
 	padding: 12px;
-	border-radius: 3px;
+	border-radius: 4px;
 	background-color: #A9D9FF;
 	position: absolute;
 	z-index: 98;
@@ -104,7 +104,7 @@ a:hover {
 	height: 87%;
 	bottom: -80%;
 	padding: 12px;
-	border-radius: 3px;
+	border-radius: 4px;
 	background-color: #A9D9FF;
 	position: absolute;
 	z-index: 98;
@@ -163,7 +163,7 @@ a:hover {
 	padding: 5px;
 	margin-top: 0;
 	margin-right: -4px;
-	border-radius: 3px;
+	border-radius: 4px 0px 0px 4px;
 }
 
 #searchButton {
@@ -173,6 +173,6 @@ a:hover {
 	border: none;
 	padding: 5px;
 	margin-top: 0;
-	margin-left: -1px;
-	border-radius: 3px;
+	margin-left: 0px;
+	border-radius: 0px 4px 4px 0px;
 }
