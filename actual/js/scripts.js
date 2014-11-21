@@ -101,13 +101,13 @@ function searchItems(){
 
 		for (i = 0; i < resultsRivers.length; i++) {
 			tempIndex=resultsRivers[i];
-			resultsHTML+="<li><a href='#'>"+rivers[tempIndex].name+"</a></li>";
+			resultsHTML+="<li class='river'><a href='#' id='"+tempIndex+"'>"+rivers[tempIndex].name+"</a></li>";
 
 		}
 
 		for (i = 0; i < resultsLakes.length; i++) {
 			tempIndex=resultsLakes[i];
-			resultsHTML+="<li><a href='#'>"+lakes[tempIndex].water+"</a></li>";
+			resultsHTML+="<li class='lake'><a href='#' id='"+tempIndex+"'>"+lakes[tempIndex].water+"</a></li>";
 		}
 
 		resultsHTML+="</ul>";
@@ -117,6 +117,14 @@ function searchItems(){
 
 	$("#resultsHeader").text("Search Results");
 	$("#resultsWindow").html(resultsHTML);
+
+	$("#resultsUl > li.river > a").click(function(){
+		markerListener('river', resultsRivers[i]);
+	});
+
+	$("#resultsUl > li.lake > a").click(function(){
+		markerListener('lake', resultsRivers[i]);
+	});
 
 }
 
