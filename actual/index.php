@@ -25,6 +25,10 @@
 </head>
 
 <body>
+	<div id="mobile" class="hidden">
+		<h1>This site is unavailable on mobile</h1>
+		<p>Please use a computer with a larger monitor to access this site.</p>
+	</div>
 	<div id="header">
 		<a href=#><h2 id="about">Nada Maps</h2><img class="logo" src="img/fishhook.svg" alt="Fish with hook"></a>
 		<div id="search">

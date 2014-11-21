@@ -188,7 +188,7 @@ function showInfo(type, listIndex, zoom){
 	resultsHTML+="<li><h4>Longitude:</h4><p>"+long+"</p></li>";	
 	resultsHTML+="<li><h4>Public Access:</h4><p>"+access+"</p></li>";
 	resultsHTML+="<li><h4>Comments:</h4><p>"+comments+"</p></li>";
-	resultsHTML+="<h4>Pictures: </h4><div id='pics'></div></ul>";
+	resultsHTML+="<li><h4>Pictures: </h4><div id='pics'></div></li></ul>";
 
 	$("#resultsHeader").text(headerHTML);
 	$("#resultsWindow").html(resultsHTML);
@@ -205,9 +205,10 @@ $(function(){
 	      format: "json"
 	    },
 	    function(data) {
-	      $.each(data.items, function(i,item){
-	        $("<img/>").attr("src", item.media.m).attr("class", "img-responsive").appendTo("#pics");
-	        if ( i == 4 ) return false;
+	    	$.each(data.items, function(i,item){
+	        	$("<img/>").attr("src", item.media.m).attr("class", "img-responsive").appendTo("#pics");
+	        
+	        if ( i == 8 ) return false;
 	      });
 	    });
 	});
