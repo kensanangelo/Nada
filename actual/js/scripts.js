@@ -97,16 +97,17 @@ function searchItems(){
 	markerCluster.addMarkers(resultMarkers);
 
 	if(resultsRivers.length>0 || resultsLakes.length>0){
-		resultsHTML="<ul>";
+		resultsHTML="<ul id='resultsUl'>";
 
 		for (i = 0; i < resultsRivers.length; i++) {
 			tempIndex=resultsRivers[i];
-			resultsHTML+="<li>"+rivers[tempIndex].name+"</li>";
+			resultsHTML+="<li><a href='#'>"+rivers[tempIndex].name+"</a></li>";
+
 		}
 
 		for (i = 0; i < resultsLakes.length; i++) {
 			tempIndex=resultsLakes[i];
-			resultsHTML+="<li>"+lakes[tempIndex].water+"</li>";
+			resultsHTML+="<li><a href='#'>"+lakes[tempIndex].water+"</a></li>";
 		}
 
 		resultsHTML+="</ul>";
@@ -114,18 +115,17 @@ function searchItems(){
 	}else
 		resultsHTML+="<p>No results found.</p>";
 
+	$("#resultsHeader").text("Search Results");
 	$("#resultsWindow").html(resultsHTML);
 
 }
 
-function markerListener(type, thisMarker){
+function markerListener(type, listIndex){
 
 	if(searchOpen==false){
 		$("#searchWindow").toggleClass("actived");
 		searchOpen=true;
 	}
-
-	var listIndex=thisMarker.indexNum;
 
 	var headerHTML="";
 	var resultsHTML="";
@@ -180,7 +180,7 @@ function markerListener(type, thisMarker){
 function initialize()
 {
 	window.mapProp = {
-	  center:new google.maps.LatLng(42.7559421,-75.8092041),
+	  center:new google.maps.LatLng(42.4,-77.8092041),
 	  minZoom:7,
 	  zoom:7,
 	  mapTypeId:google.maps.MapTypeId.ROADMAP,
@@ -220,7 +220,7 @@ function initialize()
 		});
 
 		google.maps.event.addListener(marker, 'click', function() {
-			markerListener('river', this);
+			markerListener('river', this.indexNum);
 		});
 		
 		markers.push(marker);
@@ -236,7 +236,7 @@ function initialize()
 		});
 
 		google.maps.event.addListener(marker, 'click', function() {
-			markerListener('lake', this);
+			markerListener('lake', this.indexNum);
 		});
 		
 		markers.push(marker);
@@ -281,6 +281,8 @@ $(document).ready(function(){
 			searchOpen=true;
 		}
 
+		console.log(searchOpen);
+
 	});
 
 	$("#searchBox").keypress(function(e) {
@@ -291,6 +293,7 @@ $(document).ready(function(){
 				$("#searchWindow").toggleClass("actived");
 				searchOpen=true;
 			}
+			console.log(searchOpen);
 		}
     });
 
