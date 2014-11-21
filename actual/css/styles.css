@@ -7,19 +7,43 @@ body {
 	height:	100%;
 	margin:	0;
 	padding:  0;
-	font-family: sans-serif;
+	font-family: 'Karla', sans-serif;
+	letter-spacing: .015em;
 	overflow: hidden;
 }
 
 h2 {
+	color: #e85113;
 	position: absolute;
 	margin-top: 9px;
 	padding-left: 45px;
+	font-family: 'Bubblegum Sans', cursive;
+	font-size: 2.35em;
+	letter-spacing: .02em;
+}
+
+h2:hover {
+	color: #f9f9f9;
 }
 
 h3 {
 	margin-top: 5px;
 	margin-left: 10px;
+	font-family: 'Karla', sans-serif;
+	font-weight: 700;
+	font-size: 1.65em;
+	letter-spacing: .02em;
+
+}
+
+p {
+	font-size: 1.3em;
+	line-height: 1.6em;
+}
+
+ul li {
+	font-size: 1.3em;
+	line-height: 1.6em;
 }
 
 #searchClose, #aboutClose{
@@ -33,27 +57,30 @@ form {
 }
 
 a {
-	color: #e85113;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #ffffff;
+	color: #f9f9f9;
 }
 
 .windowContent {
-	padding: 10px;
+	height: 65vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 #aboutWindow{
-	-moz-box-shadow: 5px 5px 20px #999999;
-	-webkit-box-shadow: 5px 5px 20px #999999;
-	box-shadow: 5px 5px 20px #999999;
-	left: 5%;
-	width: 25%;
+	-moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, .25);
+	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, .25);
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, .25);
+	left: 6%;
+	width: 26%;
 	min-width: 170px;
 	height: 87%;
 	bottom: 0px;
+	padding: 12px;
+	border-radius: 3px;
 	background-color: #A9D9FF;
 	position: absolute;
 	z-index: 98;
@@ -68,14 +95,16 @@ a:hover {
 }
 
 #searchWindow{
-	-moz-box-shadow: 5px 5px 20px #999999;
-	-webkit-box-shadow: 5px 5px 20px #999999;
-	box-shadow: 5px 5px 20px #999999;
-	right: 5%;
-	width: 25%;
+	-moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, .25);
+	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, .25);
+	box-shadow: 5px 5px 20px 5px 5px 20px rgba(0, 0, 0, .25);
+	right: 6%;
+	width: 26%;
 	min-width: 170px;
 	height: 87%;
 	bottom: -80%;
+	padding: 12px;
+	border-radius: 3px;
 	background-color: #A9D9FF;
 	position: absolute;
 	z-index: 98;
@@ -99,11 +128,10 @@ a:hover {
 	list-style-type: none;
 }
 
-
 #footer {
 	width: 3000px;
 	position: fixed;
-	height: 100px;
+	height: 70px;
 	margin: 0 auto;
 	text-align: center;
 	bottom: 0px;
@@ -111,11 +139,11 @@ a:hover {
 }
 
 #header {
-	-moz-box-shadow: 5px 5px 20px #999999;
-	-webkit-box-shadow: 5px 5px 20px #999999;
-	box-shadow: 5px 5px 20px #999999;
+	-moz-box-shadow: 5px 5px 20px rgba(0, 0, 0, .25);
+	-webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, .25);
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, .25);
 	float: none;
-	position: fixed;
+	position: absolute;
 	top: 0px;
 	height: 50px;
 	width: 100%;
@@ -124,7 +152,27 @@ a:hover {
 }
 
 #googleMap {
-	height: 94%;
+	height: 96%;
 	width: 100%;
 	margin: 0 auto;
+	margin-top: 45px;
+}
+
+#searchBox {
+	border: none;
+	padding: 5px;
+	margin-top: 0;
+	margin-right: -4px;
+	border-radius: 3px;
+}
+
+#searchButton {
+	background-color: #e85113;
+	color: #f9f9f9;
+	letter-spacing: .055em;
+	border: none;
+	padding: 5px;
+	margin-top: 0;
+	margin-left: -1px;
+	border-radius: 3px;
 }
