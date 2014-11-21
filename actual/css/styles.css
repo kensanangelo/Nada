@@ -65,7 +65,7 @@ a:hover {
     transition: bottom 1s;
 }
 
-#aboutWindow:active, #aboutWindow.actived {
+#aboutWindow.actived {
 	bottom: -80%;
 	-webkit-transition: bottom 0.5s; /* For Safari 3.1 to 6.0 */
     transition: bottom 0.5s;
@@ -85,7 +85,7 @@ a:hover {
     transition: bottom 0.5s;
 }
 
-#searchWindow:active, #searchWindow.actived {
+#searchWindow.actived {
 	bottom: 0px;
 	-webkit-transition: bottom 1s; /* For Safari 3.1 to 6.0 */
     transition: bottom 1s;

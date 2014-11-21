@@ -18,6 +18,8 @@ function addMarkers(rivIndexs, lakeIndexs){
 		new google.maps.Size(40, 40)
 	); 
 
+	google.maps.event.clearListeners(map, 'click');
+
 	for(i=0;i<rivIndexs.length;i++){
 
 		var index=rivIndexs[i];
@@ -25,9 +27,14 @@ function addMarkers(rivIndexs, lakeIndexs){
 		var marker = new google.maps.Marker({
 			position: new google.maps.LatLng(rivers[index].point_y, rivers[index].point_x),
 			map: map,
-			icon:pinIconR
+			icon:pinIconR,
+			indexNum: i
 		});
-		
+
+		google.maps.event.addListener(marker, 'click', function() {
+			markerListener('river', this);
+		});
+	
 		resultMarks.push(marker);
 	}
 
@@ -38,9 +45,14 @@ function addMarkers(rivIndexs, lakeIndexs){
 		var marker = new google.maps.Marker({
 			position: new google.maps.LatLng(lakes[index].point_y, lakes[index].point_x),
 			map: map,
-			icon:pinIconL
+			icon:pinIconL,
+			indexNum: i
 		});
-		
+
+		google.maps.event.addListener(marker, 'click', function() {
+			markerListener('lake', this);
+		});
+	
 		resultMarks.push(marker);
 	}
 
