@@ -26,11 +26,19 @@
 
 <body>
 	<div id="header">
+<<<<<<< HEAD
 		<a href=#><h2 id="about">Nada Maps</h2></a>
 		<form id="search" action=#>
   			<input type="search" id='searchBox' name="fishsearch" placeholder='Search Here'>
   			<input type="submit" id='searchButton' value="Search">
 		</form>
+=======
+		<a href=#><h2 id="about">NADA maps</h2></a>
+		<div id="search">
+  			<input type="search" id='searchBox' name="fishsearch" placeholder='Search Here'>
+  			<input type="button" value="Search"  id='searchButton'/>
+		</div>
+>>>>>>> Search
 	</div>
 
 	<div id="googleMap"></div>
@@ -38,7 +46,7 @@
 	<div id="aboutWindow">
 		<div>
 			<div class="row">
-				<h3 class='col-md-6' id='resultsHeader'>Welcome to Nada Maps!</h3>
+				<h3 class='col-md-6' id='aboutHeader'>Welcome to Nada Maps!</h3>
 				<button type="button" class="close pull-right" id='aboutClose'><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 			</div>
 			<div class="windowContent">
