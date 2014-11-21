@@ -43,15 +43,15 @@
 	<div id="aboutWindow">
 		<div>
 			<div class="row">
-				<h3 class='col-md-6' id='aboutHeader'>Welcome to<br/>Nada Maps!</h3>
+				<h3 class='col-md-8' id='aboutHeader'>Welcome to<br/>Nada Maps!</h3>
 				<button type="button" class="close pull-right" id='aboutClose'><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 			</div>
 			<div class="windowContent">
 				<p class="col-md-12">
-					Before you grab your gear and walk out the door, let's figure out where you're fishing today!
+					Let's figure out where you're fishing today!
 				</p>
 				<hr/>
-				<p class="col-md-12">Once you zoom in on the map, you'll see two kinds of locations.</p>
+				<p class="col-md-12">Zoom in on the map and you'll see two kinds of locations:</p>
 				<img class="col-md-3 img-responsive" src="img/lakeMark.svg" alt="Lake Map Marker">
 				<div class="col-md-9">
 					<p>This little guy means the spot is a lake.<p>
@@ -62,9 +62,9 @@
 					<p>And this one is a river.<p>
 				</div>
 				<hr/>
-				<p class="col-md-12">Select a point to see information about it! Or you can search for a specific location, type of fish, or county in the top right.</p>
+				<p class="col-md-12">Select a point to see information about it or use the Search bar for a specific location, type of fish, or county!</p>
 				<hr/>
-				<p class="col-md-12">If you ever need these instructions again just select "Nada Maps" or the image in the top left corner.</p>
+				<p class="col-md-12">Just select "Nada Maps" or the image in the top left corner to see this again</p>
 			</div>
 		</div>
 	</div>
@@ -81,6 +81,8 @@
 		</div>
 	</div>
 
+	<img id="animation2" src="img/animation2.svg" alt="Fish with bubbles">
+	<img id="animation" src="img/animation.svg" alt="Fish with bubbles">
 	<div id="footer">
 		<img src="img/waves.svg" alt="Waves">
 	</div>
