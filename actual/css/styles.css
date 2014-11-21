@@ -52,6 +52,8 @@ a:hover {
 */
 
 #aboutWindow{
+	-moz-box-shadow: 5px 5px 20px #767676;
+	-webkit-box-shadow: 5px 5px 20px #767676;
 	box-shadow: 5px 5px 20px #767676;
 	left: 5%;
 	width: 25%;
@@ -72,6 +74,8 @@ a:hover {
 }
 
 #searchWindow{
+	-moz-box-shadow: 5px 5px 20px #767676;
+	-webkit-box-shadow: 5px 5px 20px #767676;
 	box-shadow: 5px 5px 20px #767676;
 	right: 5%;
 	width: 25%;
@@ -103,11 +107,12 @@ a:hover {
 
 
 #footer {
-	width: 100%;
-	min-width: 700px;
-	min-height: 60px;
-	position: absolute;
-	bottom: -8px;
+	width: 3000px;
+	position: fixed;
+	height: 100px;
+	margin: 0 auto;
+	text-align: center;
+	bottom: 0px;
 	z-index: 99;
 }
 
