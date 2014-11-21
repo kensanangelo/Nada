@@ -13,6 +13,11 @@ body {
 	overflow: hidden;
 }
 
+#mobile{
+		display: none!important;
+		visibility: hidden!important;
+}
+
 h2 {
 	color: #e85113;
 	float: left;
@@ -227,5 +232,28 @@ div#pics img.img-responsive {
 
 	li p {
 		font-size: 1em;
+	}
+}
+
+@media screen and (max-width : 900px){
+	body{
+		color: #292929;
+		background-color: #A9D9FF;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	#mobile{
+		display: inline!important;
+		visibility: visible!important;
+	}
+	
+	h1{
+		color: #e85113;
+	}
+
+	#header, #googleMap, #aboutWindow, #searchWindow, #footer{
+		display: none!important;
+		visibility: hidden!important;
 	}
 }

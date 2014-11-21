@@ -208,7 +208,7 @@ $(function(){
 	    	$.each(data.items, function(i,item){
 	        	$("<img/>").attr("src", item.media.m).attr("class", "img-responsive").appendTo("#pics");
 	        
-	        if ( i == 8 ) return false;
+	        if ( i == 7 ) return false;
 	      });
 	    });
 	});
