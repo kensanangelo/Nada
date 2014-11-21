@@ -28,11 +28,11 @@ function addMarkers(rivIndexs, lakeIndexs){
 			position: new google.maps.LatLng(rivers[index].point_y, rivers[index].point_x),
 			map: map,
 			icon:pinIconR,
-			indexNum: i
+			indexNum: index
 		});
 
 		google.maps.event.addListener(marker, 'click', function() {
-			markerListener('river', this);
+			showInfo('river', this.indexNum);
 		});
 	
 		resultMarks.push(marker);
@@ -46,11 +46,11 @@ function addMarkers(rivIndexs, lakeIndexs){
 			position: new google.maps.LatLng(lakes[index].point_y, lakes[index].point_x),
 			map: map,
 			icon:pinIconL,
-			indexNum: i
+			indexNum: index
 		});
 
 		google.maps.event.addListener(marker, 'click', function() {
-			markerListener('lake', this);
+			showInfo('lake', this.indexNum);
 		});
 	
 		resultMarks.push(marker);
@@ -60,8 +60,6 @@ function addMarkers(rivIndexs, lakeIndexs){
 }
 
 function searchItems(){
-
-	console.log("Search Runs");
 
 	var i, tempIndex;
 	var search=$('#searchBox').val().toLowerCase();
@@ -118,17 +116,21 @@ function searchItems(){
 	$("#resultsHeader").text("Search Results");
 	$("#resultsWindow").html(resultsHTML);
 
-	$("#resultsUl > li.river > a").click(function(){
-		markerListener('river', resultsRivers[i]);
+	$("li.river > a").click(function(){
+		var which = $(this).attr('id');
+		console.log(which);
+		showInfo('river', which, true);
 	});
 
-	$("#resultsUl > li.lake > a").click(function(){
-		markerListener('lake', resultsRivers[i]);
+	$("li.lake > a").click(function(){
+		var which = $(this).attr('id');
+		console.log(which);
+		showInfo('lake', which, true);
 	});
 
 }
 
-function markerListener(type, listIndex){
+function showInfo(type, listIndex, zoom){
 
 	if(searchOpen==false){
 		$("#searchWindow").toggleClass("actived");
@@ -142,23 +144,33 @@ function markerListener(type, listIndex){
 		var name=rivers[listIndex].name;
 		var species=rivers[listIndex].fish_spec;
 		var comments=rivers[listIndex].comments;
-		var regs=rivers[listIndex].spec_regs;
+		//var regs=rivers[listIndex].spec_regs;
 		var county=rivers[listIndex].county;
 		var access=rivers[listIndex].public_acc;
-		var info=rivers[listIndex].site_wl;
+		//var info=rivers[listIndex].site_wl;
+
+		var long=rivers[listIndex].point_x;
+		var lat=rivers[listIndex].point_y;
 
 	}else if (type=='lake') {
 		var name=lakes[listIndex].water;
 		var species=lakes[listIndex].fish_speci;
 		var comments=lakes[listIndex].comments;
-		var regs=lakes[listIndex].spec_regs;
+		//var regs=lakes[listIndex].spec_regs;
 		var county=lakes[listIndex].county;
 		var access=lakes[listIndex].boat_launc;
-		var info=lakes[listIndex].weblink;
-	};
+		//var info=lakes[listIndex].weblink;
 
-	if(regs==null)
-		regs="None";
+		var long=lakes[listIndex].point_x;
+		var lat=lakes[listIndex].point_y;
+	};
+	if(zoom)
+		map.setZoom(14);
+	
+	map.panTo(new google.maps.LatLng(lat, long));
+
+	//if(regs==null)
+	//	regs="None";
 
 	if(access==null)
 		access="None";
@@ -170,17 +182,35 @@ function markerListener(type, listIndex){
 	resultsHTML+="<ul>";
 
 	//resultsHTML+="<li><a href='"+info+"'>Waterbody Information</a></li>";
-	resultsHTML+="<li><h4>Fish Species: </h4><p>"+species+"</p></li>";
-	resultsHTML+="<li><h4>County: </h4><p>"+county+"</p></li>";	
-	resultsHTML+="<li><h4>Public Access: </h4><p>"+access+"</p></li>";
-	resultsHTML+="<li><h4>Regulations: </h4><p>"+regs+"</p></li>";
-	resultsHTML+="<li><h4>Comments: </h4><p>"+comments+"</p></li>";
-	resultsHTML+="</ul>";
+	resultsHTML+="<li><h4>Fish Species:</h4><p>"+species+"</p></li>";
+	resultsHTML+="<li><h4>County:</h4><p>"+county+"</p></li>";
+	resultsHTML+="<li><h4>Latitude:</h4><p>"+lat+"</p></li>";
+	resultsHTML+="<li><h4>Longitude:</h4><p>"+long+"</p></li>";	
+	resultsHTML+="<li><h4>Public Access:</h4><p>"+access+"</p></li>";
+	resultsHTML+="<li><h4>Comments:</h4><p>"+comments+"</p></li>";
+	resultsHTML+="</ul><h4>Pictures: </h4>";
 
-	console.log(headerHTML);
-	console.log(resultsHTML);
 	$("#resultsHeader").text(headerHTML);
-	document.getElementById("resultsWindow").innerHTML=resultsHTML;
+	$("#resultsWindow").html(resultsHTML);
+
+	getFlickrImg(name);
+}
+
+function getFlickrImg(tagName){
+$(function(){	
+	    $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+	    {
+	      tags: tagName,
+	      tagmode: "any",
+	      format: "json"
+	    },
+	    function(data) {
+	      $.each(data.items, function(i,item){
+	        $("<img/>").attr("src", item.media.m).attr("class", "img-responsive").appendTo("#resultsWindow");
+	        if ( i == 10 ) return false;
+	      });
+	    });
+	});
 }
 
 
@@ -196,8 +226,6 @@ function initialize()
 		};
 
 	window.map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-	var infowindow = new google.maps.InfoWindow();
 
 	window.markers = [];
 	var i;
@@ -228,7 +256,7 @@ function initialize()
 		});
 
 		google.maps.event.addListener(marker, 'click', function() {
-			markerListener('river', this.indexNum);
+			showInfo('river', this.indexNum);
 		});
 		
 		markers.push(marker);
@@ -244,7 +272,7 @@ function initialize()
 		});
 
 		google.maps.event.addListener(marker, 'click', function() {
-			markerListener('lake', this.indexNum);
+			showInfo('lake', this.indexNum);
 		});
 		
 		markers.push(marker);
@@ -289,8 +317,6 @@ $(document).ready(function(){
 			searchOpen=true;
 		}
 
-		console.log(searchOpen);
-
 	});
 
 	$("#searchBox").keypress(function(e) {
@@ -301,7 +327,6 @@ $(document).ready(function(){
 				$("#searchWindow").toggleClass("actived");
 				searchOpen=true;
 			}
-			console.log(searchOpen);
 		}
     });
 
