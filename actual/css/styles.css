@@ -133,13 +133,13 @@ hr {
 	position: absolute;
 	z-index: 90;
 	-webkit-transition: bottom 1s; /* For Safari 3.1 to 6.0 */
-    transition: bottom 1s;
+   	transition: bottom 1s;
 }
 
 #aboutWindow.actived {
 	bottom: -90%;
 	-webkit-transition: bottom 0.5s; /* For Safari 3.1 to 6.0 */
-    transition: bottom 0.5s;
+    	transition: bottom 0.5s;
 }
 
 #searchWindow{
@@ -157,13 +157,13 @@ hr {
 	position: absolute;
 	z-index: 90;
 	-webkit-transition: bottom 0.5s; /* For Safari 3.1 to 6.0 */
-    transition: bottom 0.5s;
+    	transition: bottom 0.5s;
 }
 
 #searchWindow.actived {
 	bottom: 0px;
 	-webkit-transition: bottom 1s; /* For Safari 3.1 to 6.0 */
-    transition: bottom 1s;
+    	transition: bottom 1s;
 }
 
 #resultsWindow{
